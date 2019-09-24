@@ -11,7 +11,6 @@ export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
 
-  // hero = 'Windstorm';
   hero: Hero = {
     id: 1,
     name: 'Windstorm'
@@ -25,7 +24,6 @@ export class HeroesComponent implements OnInit {
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-
 
   ngOnInit() {
   }
