@@ -27,8 +27,14 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  // Synchronous signature
+  // getHeroes(): void {
+  //   this.heroes = this.heroService.getHeroes();
+  // }
+
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
   }
 
   ngOnInit() {
