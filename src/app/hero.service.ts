@@ -11,11 +11,6 @@ export class HeroService {
 
   constructor(private messageService: MessageService) { }
 
-  // Synchronous signature
-  // getHeroes(): Hero[] {
-  //   return HEROES;
-  // }
-
   // Asynchronous signature Observable
   getHeroes(): Observable<Hero[]> {
 
