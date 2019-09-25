@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -9,29 +10,28 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
 
-  selectedHero: Hero;
+  // selectedHero: Hero;
 
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+  // hero: Hero = {
+  //   id: 1,
+  //   name: 'Windstorm'
+  // };
 
   heroes: Hero[];
 
   constructor(private heroService: HeroService) { }
 
-  // On Select method
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  ngOnInit() {
+    this.getHeroes();
   }
+
+  // On Select method
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  // }
 
   getHeroes(): void {
     this.heroService.getHeroes()
         .subscribe(heroes => this.heroes = heroes);
   }
-
-  ngOnInit() {
-    this.getHeroes();
-  }
-
 }
